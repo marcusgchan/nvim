@@ -35,4 +35,5 @@ return require('packer').startup(function(use)
     use('neovim/nvim-lspconfig')
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
+    use 'manzeloth/live-server'
 end)
