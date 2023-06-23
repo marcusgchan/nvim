@@ -36,4 +36,5 @@ return require('packer').startup(function(use)
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
     use 'manzeloth/live-server'
+    use('github/copilot.vim')
 end)
