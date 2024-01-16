@@ -12,7 +12,7 @@ return {
 
 		local opts = { noremap = true }
 		local on_attach = function(client, bufnr)
-			opts.bufnr = bufnr
+			opts.buffer = bufnr
 
 			keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 			keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -39,6 +39,24 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- configure svelte server
+		-- https://github.com/sveltejs/language-tools/issues/2008
+		lspconfig["svelte"].setup({
+			capabilities = capabilities,
+			on_attach = function(client, bufnr)
+				on_attach(client, bufnr)
+
+				vim.api.nvim_create_autocmd("BufWritePost", {
+					pattern = { "*.js", "*.ts" },
+					callback = function(ctx)
+						if client.name == "svelte" then
+							client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+						end
+					end,
+				})
+			end,
+		})
+
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
@@ -55,6 +73,11 @@ return {
 		})
 
 		lspconfig["pyright"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		lspconfig["clangd"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
