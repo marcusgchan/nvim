@@ -19,6 +19,7 @@ return {
 				"lua_ls",
 				"prismals",
 				"pyright",
+				"gopls",
 			},
 			automatic_installation = true,
 		})

@@ -32,6 +32,7 @@ return {
 		lspconfig["html"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = { "html", "templ" },
 		})
 
 		lspconfig["tsserver"].setup({
@@ -63,6 +64,17 @@ return {
 		lspconfig["tailwindcss"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = {
+				"html",
+				"css",
+				"javascript",
+				"javascriptreact",
+				"typescript",
+				"typescriptreact",
+				"svelte",
+				"templ",
+			},
+			init_options = { userLanguages = { templ = "html" } },
 		})
 
 		lspconfig["prismals"].setup({
@@ -78,6 +90,27 @@ return {
 		lspconfig["clangd"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+		})
+
+		lspconfig["gopls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			settings = {
+				gopls = {
+					analyses = {
+						unusedparams = true,
+					},
+					staticcheck = true,
+					gofumpt = true,
+				},
+			},
+		})
+
+		lspconfig["templ"].setup({
+			capabilities = capabilities,
+			on_attach = function(client, bufnr)
+				on_attach(client, bufnr)
+			end,
 		})
 
 		lspconfig["lua_ls"].setup({

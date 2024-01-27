@@ -17,6 +17,7 @@ return {
 				graphql = { "prettier" },
 				python = { "isort", "black" },
 				c = { "clang_format" },
+				go = { "gofumpt" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

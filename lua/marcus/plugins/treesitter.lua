@@ -1,3 +1,9 @@
+vim.filetype.add({
+	extension = {
+		templ = "templ",
+	},
+})
+
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
@@ -20,6 +26,7 @@ return {
 				"json",
 				"prisma",
 				"svelte",
+				"templ",
 			},
 			sync_install = false,
 			highlight = { enable = true },
