@@ -35,5 +35,7 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
+opt.scrolloff = 20 -- keep 10 lines above and below cursor when scrolling
+
 -- turn off swapfile
 opt.swapfile = false

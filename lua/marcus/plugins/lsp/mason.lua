@@ -20,6 +20,7 @@ return {
 				"prismals",
 				"pyright",
 				"gopls",
+				"templ",
 			},
 			automatic_installation = true,
 		})

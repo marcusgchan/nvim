@@ -8,6 +8,8 @@ return {
 				lua = { "stylua" },
 				javascript = { "prettier" },
 				typescriptreact = { "prettier" },
+				javascriptreact = { "prettier" },
+				typescript = { "prettier" },
 				svelte = { "prettier" },
 				css = { "prettier" },
 				html = { "prettier" },
@@ -18,6 +20,10 @@ return {
 				python = { "isort", "black" },
 				c = { "clang_format" },
 				go = { "gofumpt" },
+				templ = function(buf)
+					print("haha")
+					return { "templ" }
+				end,
 			},
 			format_on_save = {
 				lsp_fallback = true,
@@ -25,7 +31,9 @@ return {
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>fd", function()
+			print("test")
 			conform.format({
+				async = true,
 				lsp_fallback = true,
 			})
 		end)

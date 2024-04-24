@@ -2,6 +2,7 @@ return {
 	"mfussenegger/nvim-lint",
 	event = { "BufReadPre", "BufNewFile" },
 	opts = {
+		enabled = true,
 		linters = {
 			eslint_d = {
 				args = {

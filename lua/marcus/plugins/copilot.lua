@@ -2,7 +2,7 @@ return {
 	"zbirenbaum/copilot.lua",
 	cmd = "Copilot",
 	event = "InsertEnter",
-	enabled = true,
+	enabled = false,
 	config = function()
 		vim.g.copilot_no_tab_map = true
 		require("copilot").setup({
