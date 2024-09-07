@@ -10,21 +10,6 @@ return {
 
 		mason.setup({})
 
-		masonLspConfig.setup({
-			ensure_installed = {
-				"tsserver",
-				"html",
-				"cssls",
-				"tailwindcss",
-				"lua_ls",
-				"prismals",
-				"pyright",
-				"gopls",
-				"templ",
-			},
-			automatic_installation = true,
-		})
-
 		local mason_tool_installer = require("mason-tool-installer")
 		mason_tool_installer.setup({
 			ensure_installed = {
@@ -36,5 +21,38 @@ return {
 				"eslint_d", -- js linter
 			},
 		})
+
+		masonLspConfig.setup({
+			ensure_installed = {
+				"tsserver",
+				"html",
+				"cssls",
+				"tailwindcss",
+				"lua_ls",
+				"prismals",
+				"pyright",
+				"gopls",
+				"templ",
+				"clangd",
+			},
+			automatic_installation = true,
+		})
+
+		-- masonLspConfig.setup_handlers({
+		-- 	-- Will be called for each installed server that doesn't have
+		-- 	-- a dedicated handler.
+		-- 	--
+		-- 	function(server_name) -- default handler (optional)
+		-- 		-- https://github.com/neovim/nvim-lspconfig/pull/3232
+		-- 		if server_name == "tsserver" then
+		-- 			server_name = "ts_ls"
+		-- 		end
+		-- 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		-- 		require("lspconfig")[server_name].setup({
+		--
+		-- 			capabilities = capabilities,
+		-- 		})
+		-- 	end,
+		-- })
 	end,
 }
