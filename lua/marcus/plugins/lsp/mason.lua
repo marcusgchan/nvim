@@ -19,12 +19,13 @@ return {
 				"black", -- python formatter
 				"pylint", -- python linter
 				"eslint_d", -- js linter
+				"clang-format",
 			},
 		})
 
 		masonLspConfig.setup({
 			ensure_installed = {
-				"tsserver",
+				"ts_ls",
 				"html",
 				"cssls",
 				"tailwindcss",
@@ -34,6 +35,7 @@ return {
 				"gopls",
 				"templ",
 				"clangd",
+				"cmake",
 			},
 			automatic_installation = true,
 		})

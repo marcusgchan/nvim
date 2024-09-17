@@ -14,6 +14,7 @@ return {
 			ensure_installed = {
 				"c",
 				"cpp",
+				"cmake",
 				"lua",
 				"vimdoc",
 				"javascript",
@@ -27,6 +28,7 @@ return {
 				"prisma",
 				"svelte",
 				"templ",
+				"python",
 			},
 			sync_install = false,
 			highlight = { enable = true },
