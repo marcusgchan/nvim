@@ -1,5 +1,7 @@
 local opt = vim.opt -- for conciseness
 
+opt.colorcolumn = "80"
+
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
@@ -35,7 +37,7 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
-opt.scrolloff = 20 -- keep 10 lines above and below cursor when scrolling
+opt.scrolloff = 10 -- keep 10 lines above and below cursor when scrolling
 
 opt.conceallevel = 1
 

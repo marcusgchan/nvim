@@ -29,10 +29,15 @@ return {
 				"svelte",
 				"templ",
 				"python",
+				"markdown_inline",
+				"hcl",
 			},
 			sync_install = false,
 			highlight = { enable = true },
-			indent = { enable = true },
+			indent = {
+				enable = true,
+				disable = { "typescript" },
+			},
 		})
 	end,
 }
