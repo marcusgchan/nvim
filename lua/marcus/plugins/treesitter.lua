@@ -1,12 +1,7 @@
-vim.filetype.add({
-	extension = {
-		templ = "templ",
-	},
-})
-
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
+	enabled = true,
 	config = function()
 		local configs = require("nvim-treesitter.configs")
 
@@ -29,6 +24,7 @@ return {
 				"svelte",
 				"templ",
 				"python",
+				"markdown",
 				"markdown_inline",
 				"hcl",
 			},
@@ -36,7 +32,7 @@ return {
 			highlight = { enable = true },
 			indent = {
 				enable = true,
-				disable = { "typescript" },
+				disable = { "typescript", "tsx" },
 			},
 		})
 	end,

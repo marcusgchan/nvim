@@ -39,7 +39,7 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 opt.scrolloff = 10 -- keep 10 lines above and below cursor when scrolling
 
-opt.conceallevel = 1
+opt.conceallevel = 0
 
 -- turn off swapfile
 opt.swapfile = false
